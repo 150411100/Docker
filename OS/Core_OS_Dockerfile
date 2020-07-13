@@ -1,0 +1,4 @@
+# Core-OS
+FROM coreos
+MAINTAINER  Tyrone.Zhao
+

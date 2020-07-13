@@ -1,0 +1,12 @@
+# Debian 和 Ubunt 是同一支
+
+FROM ubuntu
+MAINTIAINER Tyrone.Zhao <150411100@qq.com>
+
+RUN apt-get update && \
+    apt-get install -y curl && \
+    apt-get install -y apache2 
+
+EXPOSE 80
+
+ENTERPRIONT ["apachectl","-f"]

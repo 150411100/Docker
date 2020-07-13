@@ -1,0 +1,28 @@
+# SSH Install On Cotainer 
+# 设置继承镜像
+FROM ubuntu 
+
+# 作者信息
+MAINTAINER Tyrone.Zhao <150411100@qq.com>
+
+# 安装ssh 服务
+RUN apt-get update && \
+    apt-get install -y openssh-server && \
+    mkdir -p /var/run/sshd && \
+    mkdir -p /root/.ssh  
+
+#  取消限制
+RUN sed -ri 's/session  required    pam_loginuid.so/#session  required    pam_loginuid.so/g' /etc/pam.d/sshd
+
+# 复制配置文件到相应的目录
+ADD authorized_keys  /root/.ssh/authorized_keys
+ADD run.sh  /run.sh
+RUN chmod 755 /run.sh
+
+# 开放端口
+EXPOSE 22
+
+# 设置自动启动命令
+CMD ["/run.sh"]
+
+

@@ -1,0 +1,5 @@
+# Busybox 是集成了100多个最常用Linux命令和工具的软件工具箱， 如grep 、find 、mount 以及telnet 
+# Busybox 在单一的可执行文件中提供了精简的Unix工具箱
+# Busybo 可运行于多款POSIX 环境的操作系统中
+
+FROM busybox

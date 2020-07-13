@@ -1,0 +1,4 @@
+# CentOS and Fedoar
+
+FROM centos
+MAINTAINER Tyrone.Zhao <150411100@qq.com>
